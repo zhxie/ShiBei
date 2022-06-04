@@ -1,8 +1,8 @@
 //
 //  ShiBeiApp.swift
-//  Shared
+//  ShiBei
 //
-//  Created by 谢之皓 on 2022/6/4.
+//  Created by Xie Zhihao on 2022/6/4.
 //
 
 import SwiftUI

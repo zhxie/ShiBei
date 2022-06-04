@@ -1,8 +1,8 @@
 //
 //  Persistence.swift
-//  Shared
+//  ShiBei
 //
-//  Created by 谢之皓 on 2022/6/4.
+//  Created by Xie Zhihao on 2022/6/4.
 //
 
 import CoreData
@@ -13,9 +13,10 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for i in 0..<10 {
+            let newRecord = Record(context: viewContext)
+            newRecord.title = String(format: "Test", i)
+            newRecord.date = Date.now.addingTimeInterval(Double(86400 * (i - 4)))
         }
         do {
             try viewContext.save()

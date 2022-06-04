@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  ShiBei
+
+  Created by Xie Zhihao on 2022/6/4.
+  
+*/
+
+// Views
+"record" = "Record";
+"records" = "Records";
+
+"automatic" = "Automatic";
+"title" = "Title";
+"oldest_to_newest" = "Oldest to Newest";
+"newest_to_oldest" = "Newest to Oldest";
+"sort_by" = "Sort By";
+"add" = "Add";
+
+"from_%@" = "From %@";
+"n/a" = "N/A";
