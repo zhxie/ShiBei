@@ -10,11 +10,34 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var viewContext
+    
+    @State var sortBy : SortBy = .Automatic
 
     @FetchRequest(
-        sortDescriptors: [SortDescriptor(\.date)],
+        sortDescriptors: [SortDescriptor(\.id)],
         animation: .default)
     var records: FetchedResults<Record>
+    
+    var sortedRecords : [Record] {
+        records.sorted { a, b in
+            switch sortBy {
+            case .Automatic:
+                let aRecommendation = recommend(date: a.date!)
+                let bRecommendation = recommend(date: b.date!)
+                if aRecommendation == 0 && bRecommendation == 0 {
+                    return a.date! > b.date!
+                }
+                
+                return aRecommendation < bRecommendation
+            case .Title:
+                return a.title! < b.title!
+            case .OldestToNewest:
+                return a.date! > b.date!
+            case .NewestToOldest:
+                return a.date! < b.date!
+            }
+        }
+    }
 
     var body: some View {
         NavigationView {
@@ -23,7 +46,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 ScrollView {
-                    ForEach(records) {record in
+                    ForEach(sortedRecords) {record in
                         RecordView(title: record.title!, date: record.date!)
                     }
                     .padding(.horizontal)
@@ -33,21 +56,31 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Button {} label: {
+                        Button {
+                            withAnimation {
+                                self.sortBy = .Automatic
+                            }
+                        } label: {
                             Label("automatic", systemImage: "star")
                         }
                         Button {
-                            records.sortDescriptors = [SortDescriptor(\.title)]
+                            withAnimation {
+                                self.sortBy = .Title
+                            }
                         } label: {
                             Label("title", systemImage: "abc")
                         }
                         Button {
-                            records.sortDescriptors = [SortDescriptor(\.date)]
+                            withAnimation {
+                                self.sortBy = .NewestToOldest
+                            }
                         } label: {
                             Label("oldest_to_newest", systemImage: "arrow.up")
                         }
                         Button {
-                            records.sortDescriptors = [SortDescriptor(\.date, order: .reverse)]
+                            withAnimation {
+                                self.sortBy = .OldestToNewest
+                            }
                         } label: {
                             Label("newest_to_oldest", systemImage: "arrow.down")
                         }
@@ -69,7 +102,7 @@ struct ContentView: View {
             return 0
         }
         
-        let dayToNow = date.dayToNow
+        let dayToNow = date.dayToNow + 1
         if dayToNow % 100 == 0 {
             return (dayToNow / 100 + 1) * hundredsWeight
         }
@@ -90,6 +123,7 @@ struct ContentView: View {
     private func addItem(title: String, date: Date) {
         withAnimation {
             let newRecord = Record(context: viewContext)
+            newRecord.id = UUID()
             newRecord.title = title
             newRecord.date = date
 

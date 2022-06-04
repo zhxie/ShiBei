@@ -26,8 +26,10 @@
 		E4D48B68284B650C000ABF8A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B67284B650C000ABF8A /* String.swift */; };
 		E4D48B69284B650C000ABF8A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B67284B650C000ABF8A /* String.swift */; };
 		E4D48B6D284B65C4000ABF8A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D48B6C284B65C4000ABF8A /* CloudKit.framework */; };
-		E4D48B74284B7B0A000ABF8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B73284B7B09000ABF8A /* Constants.swift */; };
-		E4D48B75284B7B0A000ABF8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B73284B7B09000ABF8A /* Constants.swift */; };
+		E4D48BB8284B9CE9000ABF8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BB7284B9CE9000ABF8A /* Constants.swift */; };
+		E4D48BB9284B9CE9000ABF8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BB7284B9CE9000ABF8A /* Constants.swift */; };
+		E4D48BBC284BBF92000ABF8A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBB284BBF92000ABF8A /* ViewModel.swift */; };
+		E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBB284BBF92000ABF8A /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,8 @@
 		E4D48B6A284B65C2000ABF8A /* ShiBei (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ShiBei (iOS).entitlements"; sourceTree = "<group>"; };
 		E4D48B6C284B65C4000ABF8A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		E4D48B6E284B6624000ABF8A /* ShiBei--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ShiBei--iOS--Info.plist"; sourceTree = "<group>"; };
-		E4D48B73284B7B09000ABF8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E4D48BB7284B9CE9000ABF8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E4D48BBB284BBF92000ABF8A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +117,7 @@
 		E4D48B50284B6280000ABF8A /* ShiBei */ = {
 			isa = PBXGroup;
 			children = (
-				E4D48B6F284B6C85000ABF8A /* Models */,
+				E4D48BBA284BA38B000ABF8A /* Models */,
 				E4D48B2C284B5FF4000ABF8A /* ShiBeiApp.swift */,
 				E4D48B2D284B5FF4000ABF8A /* ContentView.swift */,
 				E4D48B60284B64E4000ABF8A /* RecordView.swift */,
@@ -139,10 +142,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E4D48B6F284B6C85000ABF8A /* Models */ = {
+		E4D48BBA284BA38B000ABF8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E4D48B73284B7B09000ABF8A /* Constants.swift */,
+				E4D48BB7284B9CE9000ABF8A /* Constants.swift */,
+				E4D48BBB284BBF92000ABF8A /* ViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D48BB8284B9CE9000ABF8A /* Constants.swift in Sources */,
+				E4D48BBC284BBF92000ABF8A /* ViewModel.swift in Sources */,
 				E4D48B3D284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */,
 				E4D48B43284B5FF6000ABF8A /* Persistence.swift in Sources */,
 				E4D48B68284B650C000ABF8A /* String.swift in Sources */,
@@ -255,7 +261,6 @@
 				E4D48B61284B64E4000ABF8A /* RecordView.swift in Sources */,
 				E4D48B3F284B5FF6000ABF8A /* ShiBeiApp.swift in Sources */,
 				E4D48B41284B5FF6000ABF8A /* ContentView.swift in Sources */,
-				E4D48B74284B7B0A000ABF8A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D48BB9284B9CE9000ABF8A /* Constants.swift in Sources */,
+				E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */,
 				E4D48B3E284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */,
 				E4D48B44284B5FF6000ABF8A /* Persistence.swift in Sources */,
 				E4D48B69284B650C000ABF8A /* String.swift in Sources */,
@@ -270,7 +277,6 @@
 				E4D48B62284B64E4000ABF8A /* RecordView.swift in Sources */,
 				E4D48B40284B5FF6000ABF8A /* ShiBeiApp.swift in Sources */,
 				E4D48B42284B5FF6000ABF8A /* ContentView.swift in Sources */,
-				E4D48B75284B7B0A000ABF8A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

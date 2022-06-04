@@ -13,10 +13,11 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for i in 0..<10 {
+        for (title, day) in [("Hundreds", -99), ("Yesterday", -1), ("Today", 0), ("Tomorrow", 1)] {
             let newRecord = Record(context: viewContext)
-            newRecord.title = String(format: "Test", i)
-            newRecord.date = Date.now.addingTimeInterval(Double(86400 * (i - 4)))
+            newRecord.id = UUID()
+            newRecord.title = title
+            newRecord.date = Date.now.advanced(by: TimeInterval(86400 * day))
         }
         do {
             try viewContext.save()
