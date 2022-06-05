@@ -55,18 +55,24 @@ struct ContentView: View {
                 Color(UIColor.secondarySystemBackground)
                     .ignoresSafeArea()
                 
-                ScrollView {
-                    ForEach(sortedRecords) {record in
-                        RecordView(title: record.wrappedTitle, date: record.wrappedDate, pin: record.pin, recommended: recommend(date: record.wrappedDate) > 0)
-                            .onTapGesture {
-                                self.id = record.wrappedId
-                                self.title = record.wrappedTitle
-                                self.date = record.wrappedDate
-                                self.pin = record.pin
-                                self.isAdding = true
-                            }
+                if records.isEmpty {
+                    Text("no_records")
+                        .font(.title3)
+                        .foregroundColor(Color(UIColor.tertiaryLabel))
+                } else {
+                    ScrollView {
+                        ForEach(sortedRecords) {record in
+                            RecordView(title: record.wrappedTitle, date: record.wrappedDate, pin: record.pin, recommended: recommend(date: record.wrappedDate) > 0)
+                                .onTapGesture {
+                                    self.id = record.wrappedId
+                                    self.title = record.wrappedTitle
+                                    self.date = record.wrappedDate
+                                    self.pin = record.pin
+                                    self.isAdding = true
+                                }
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
                 }
             }
             .navigationTitle("records")

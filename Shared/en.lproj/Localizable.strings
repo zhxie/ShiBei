@@ -16,6 +16,7 @@
 "newest_to_oldest" = "Newest to Oldest";
 "sort_by" = "Sort By";
 "add" = "Add";
+"no_records" = "No Records";
 
 "from_%@" = "From %@";
 "n/a" = "N/A";

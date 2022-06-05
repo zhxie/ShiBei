@@ -16,6 +16,7 @@
 "newest_to_oldest" = "最新到最旧";
 "sort_by" = "排序方式";
 "add" = "新建";
+"no_records" = "没有纪录";
 
 "from_%@" = "自%@";
 "n/a" = "N/A";
