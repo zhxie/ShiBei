@@ -132,19 +132,19 @@ struct ContentView: View {
             return 0
         }
         
+        let now = Date.now
+        let yearDelta = now.get(.year) - date.get(.year)
+        if date.isAnniversary {
+            return (yearDelta + 1) * anniversaryWeight
+        }
+        
         let dayToNow = date.dayToNow + 1
         if dayToNow % 100 == 0 {
             return (dayToNow / 100 + 1) * hundredsWeight
         }
         
-        let now = Date.now
-        let yearDelta = now.year - date.year
-        if date.isAnniversary {
-            return (yearDelta + 1) * anniversaryWeight
-        }
-        
         if date.isMonthiversary {
-            return (yearDelta * 12 + now.month - date.month + 1) * monthiversaryWeight
+            return (yearDelta * 12 + now.get(.month) - date.get(.month) + 1) * monthiversaryWeight
         }
         
         return 0
