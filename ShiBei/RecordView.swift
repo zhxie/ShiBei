@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct RecordView: View {
-    @State var scaled = false
-    
     let title: String
     let date: Date
     let pin: Bool
@@ -17,52 +15,49 @@ struct RecordView: View {
     let callback: () -> Void
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .fill(.background)
-            
-            HStack {
-                VStack (alignment: .leading, spacing: 4) {
-                    Text(title + " ")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .lineLimit(1)
-                    
-                    HStack (spacing: 4) {
-                        if pin {
-                            Image(systemName: "pin.fill")
-                                .foregroundColor(.red)
-                        }
-                        else if recommended {
-                            Image(systemName: "star.fill")
-                                .foregroundColor(.yellow)
-                        }
-                        
-                        Text(since)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
+        Button {
+            callback()
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.background)
+                
+                HStack {
+                    VStack (alignment: .leading, spacing: 4) {
+                        Text(title + " ")
+                            .font(.title2)
+                            .fontWeight(.bold)
                             .lineLimit(1)
+                        
+                        HStack (spacing: 4) {
+                            if pin {
+                                Image(systemName: "pin.fill")
+                                    .foregroundColor(.red)
+                            }
+                            else if recommended {
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(.yellow)
+                            }
+                            
+                            Text(since)
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .lineLimit(1)
+                        }
                     }
+                    
+                    Spacer()
+                    
+                    Text(String(count))
+                        .font(.system(size: 48))
+                        .layoutPriority(1)
+                        .lineLimit(1)
                 }
-                
-                Spacer()
-                
-                Text(String(count))
-                    .font(.system(size: 48))
-                    .layoutPriority(1)
-                    .lineLimit(1)
+                .padding()
             }
-            .padding()
+            .foregroundColor(Color(UIColor.label))
         }
-        .scaleEffect(scaled ? 0.95 : 1)
-        .onTouchDownUpGesture { tapped in
-            withAnimation {
-                self.scaled = tapped
-            }
-            if !tapped {
-                callback()
-            }
-        }
+        .buttonStyle(ScaleButtonStyle())
     }
     
     var since: String {

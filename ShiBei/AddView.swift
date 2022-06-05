@@ -52,7 +52,7 @@ struct AddView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("cancel") {
+                    Button("cancel", role: .cancel) {
                         isPresented = false
                     }
                 }
