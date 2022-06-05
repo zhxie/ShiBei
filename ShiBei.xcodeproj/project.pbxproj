@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E49B0B67284CF2350003C57F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B0B66284CF2350003C57F /* ButtonStyle.swift */; };
 		E49B0B68284CF2350003C57F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B0B66284CF2350003C57F /* ButtonStyle.swift */; };
+		E49B0B73284CF80C0003C57F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E49B0B76284CF80C0003C57F /* InfoPlist.strings */; };
+		E49B0B74284CF80C0003C57F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E49B0B76284CF80C0003C57F /* InfoPlist.strings */; };
 		E4D48B3D284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B2A284B5FF4000ABF8A /* ShiBei.xcdatamodeld */; };
 		E4D48B3E284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B2A284B5FF4000ABF8A /* ShiBei.xcdatamodeld */; };
 		E4D48B3F284B5FF6000ABF8A /* ShiBeiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B2C284B5FF4000ABF8A /* ShiBeiApp.swift */; };
@@ -34,7 +36,6 @@
 		E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBB284BBF92000ABF8A /* ViewModel.swift */; };
 		E4D48BBF284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
 		E4D48BC0284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
-		E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */; };
 		E4D48BF3284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
 		E4D48BF4284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
 		E4D48BF7284CBC47000ABF8A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF6284CBC47000ABF8A /* UUID.swift */; };
@@ -53,6 +54,10 @@
 
 /* Begin PBXFileReference section */
 		E49B0B66284CF2350003C57F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		E49B0B75284CF80C0003C57F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E49B0B77284CF80E0003C57F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E49B0B79284CF88C0003C57F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E49B0B7A284CF9110003C57F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E4D48B2B284B5FF4000ABF8A /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E4D48B2C284B5FF4000ABF8A /* ShiBeiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiApp.swift; sourceTree = "<group>"; };
 		E4D48B2D284B5FF4000ABF8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,13 +73,12 @@
 		E4D48B67284B650C000ABF8A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E4D48B6A284B65C2000ABF8A /* ShiBei (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ShiBei (iOS).entitlements"; sourceTree = "<group>"; };
 		E4D48B6C284B65C4000ABF8A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
-		E4D48B6E284B6624000ABF8A /* ShiBei--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ShiBei--iOS--Info.plist"; sourceTree = "<group>"; };
+		E4D48B6E284B6624000ABF8A /* ShiBei--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShiBei--iOS--Info.plist"; sourceTree = "<group>"; };
 		E4D48BB7284B9CE9000ABF8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E4D48BBB284BBF92000ABF8A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E4D48BBE284BCED9000ABF8A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		E4D48BD4284C8BA8000ABF8A /* ShiBeiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiTests.swift; sourceTree = "<group>"; };
 		E4D48BDF284C8BCB000ABF8A /* ShiBeiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShiBeiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiTests.swift; sourceTree = "<group>"; };
 		E4D48BF2284CB87B000ABF8A /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		E4D48BF6284CBC47000ABF8A /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,18 +117,28 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E49B0B78284CF8390003C57F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E4D48B6A284B65C2000ABF8A /* ShiBei (iOS).entitlements */,
+				E49B0B76284CF80C0003C57F /* InfoPlist.strings */,
+				E4D48B6E284B6624000ABF8A /* ShiBei--iOS--Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		E4D48B24284B5FF3000ABF8A = {
 			isa = PBXGroup;
 			children = (
-				E4D48B6E284B6624000ABF8A /* ShiBei--iOS--Info.plist */,
-				E4D48B6A284B65C2000ABF8A /* ShiBei (iOS).entitlements */,
 				E4D48B29284B5FF4000ABF8A /* Shared */,
+				E49B0B78284CF8390003C57F /* iOS */,
 				E4D48B3B284B5FF6000ABF8A /* macOS */,
 				E4D48B50284B6280000ABF8A /* ShiBei */,
 				E4D48BD3284C8BA8000ABF8A /* ShiBeiTests */,
-				E4D48BE0284C8BCB000ABF8A /* ShiBeiTests */,
-				E4D48B35284B5FF6000ABF8A /* Products */,
 				E4D48B6B284B65C4000ABF8A /* Frameworks */,
+				E49B0B79284CF88C0003C57F /* README.md */,
+				E49B0B7A284CF9110003C57F /* LICENSE */,
+				E4D48B35284B5FF6000ABF8A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,14 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				E4D48BD4284C8BA8000ABF8A /* ShiBeiTests.swift */,
-			);
-			path = ShiBeiTests;
-			sourceTree = "<group>";
-		};
-		E4D48BE0284C8BCB000ABF8A /* ShiBeiTests */ = {
-			isa = PBXGroup;
-			children = (
-				E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */,
 			);
 			path = ShiBeiTests;
 			sourceTree = "<group>";
@@ -327,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D48B45284B5FF6000ABF8A /* Assets.xcassets in Resources */,
+				E49B0B73284CF80C0003C57F /* InfoPlist.strings in Resources */,
 				E4D48B5B284B636B000ABF8A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D48B46284B5FF6000ABF8A /* Assets.xcassets in Resources */,
+				E49B0B74284CF80C0003C57F /* InfoPlist.strings in Resources */,
 				E4D48B5C284B636B000ABF8A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +416,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E49B0B76284CF80C0003C57F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E49B0B75284CF80C0003C57F /* en */,
+				E49B0B77284CF80E0003C57F /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		E4D48B5E284B636B000ABF8A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -535,13 +551,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ShiBei (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS/ShiBei (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ShiBei--iOS--Info.plist";
+				INFOPLIST_FILE = "iOS/ShiBei--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -567,13 +583,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ShiBei (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "iOS/ShiBei (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PSXQUH2HR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ShiBei--iOS--Info.plist";
+				INFOPLIST_FILE = "iOS/ShiBei--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -608,6 +624,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ShiBei--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -636,6 +653,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ShiBei--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
