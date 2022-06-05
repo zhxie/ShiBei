@@ -18,34 +18,27 @@ extension Date {
         self.init(timeIntervalSinceReferenceDate: calendar.date(from: components)!.timeIntervalSinceReferenceDate)
     }
     
-    var year: Int {
-        return Int(self.formatted(.dateTime.year()))!
+    func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
+        return calendar.dateComponents(Set(components), from: self)
     }
-    
-    var month: Int {
-        return Int(self.formatted(.dateTime.month(.defaultDigits)))!
-    }
-    
-    var day: Int {
-        return Int(self.formatted(.dateTime.day()))!
+
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
     }
     
     var isAnniversary: Bool {
         let now = Date.now
-        return now.month == self.month && now.day == self.day
+        
+        return now.get(.month) == get(.month) && now.get(.day) == get(.day)
     }
     
     var isMonthiversary: Bool {
-        return Date.now.month == self.month
-    }
-    
-    var daySinceNow: Int {
-        let interval = self.timeIntervalSinceNow
-        
-        return Int(floor(interval / 86400))
+        return Date.now.get(.day) == get(.day)
     }
     
     var dayToNow: Int {
-        return -daySinceNow
+        let interval = -self.timeIntervalSinceNow
+        
+        return Int(floor(interval / 86400))
     }
 }
