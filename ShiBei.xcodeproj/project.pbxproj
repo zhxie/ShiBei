@@ -32,7 +32,18 @@
 		E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBB284BBF92000ABF8A /* ViewModel.swift */; };
 		E4D48BBF284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
 		E4D48BC0284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
+		E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4D48BE3284C8BCB000ABF8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4D48B25284B5FF3000ABF8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4D48B33284B5FF6000ABF8A;
+			remoteInfo = "ShiBei (iOS)";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E4D48B2B284B5FF4000ABF8A /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -54,6 +65,9 @@
 		E4D48BB7284B9CE9000ABF8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E4D48BBB284BBF92000ABF8A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E4D48BBE284BCED9000ABF8A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		E4D48BD4284C8BA8000ABF8A /* ShiBeiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiTests.swift; sourceTree = "<group>"; };
+		E4D48BDF284C8BCB000ABF8A /* ShiBeiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShiBeiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4D48BDC284C8BCB000ABF8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +104,8 @@
 				E4D48B29284B5FF4000ABF8A /* Shared */,
 				E4D48B3B284B5FF6000ABF8A /* macOS */,
 				E4D48B50284B6280000ABF8A /* ShiBei */,
+				E4D48BD3284C8BA8000ABF8A /* ShiBeiTests */,
+				E4D48BE0284C8BCB000ABF8A /* ShiBeiTests */,
 				E4D48B35284B5FF6000ABF8A /* Products */,
 				E4D48B6B284B65C4000ABF8A /* Frameworks */,
 			);
@@ -105,6 +128,7 @@
 			children = (
 				E4D48B34284B5FF6000ABF8A /* ShiBei.app */,
 				E4D48B3A284B5FF6000ABF8A /* ShiBei.app */,
+				E4D48BDF284C8BCB000ABF8A /* ShiBeiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +179,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E4D48BD3284C8BA8000ABF8A /* ShiBeiTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4D48BD4284C8BA8000ABF8A /* ShiBeiTests.swift */,
+			);
+			path = ShiBeiTests;
+			sourceTree = "<group>";
+		};
+		E4D48BE0284C8BCB000ABF8A /* ShiBeiTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */,
+			);
+			path = ShiBeiTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,6 +232,24 @@
 			productReference = E4D48B3A284B5FF6000ABF8A /* ShiBei.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E4D48BDE284C8BCB000ABF8A /* ShiBeiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4D48BE5284C8BCB000ABF8A /* Build configuration list for PBXNativeTarget "ShiBeiTests" */;
+			buildPhases = (
+				E4D48BDB284C8BCB000ABF8A /* Sources */,
+				E4D48BDC284C8BCB000ABF8A /* Frameworks */,
+				E4D48BDD284C8BCB000ABF8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4D48BE4284C8BCB000ABF8A /* PBXTargetDependency */,
+			);
+			name = ShiBeiTests;
+			productName = ShiBeiTests;
+			productReference = E4D48BDF284C8BCB000ABF8A /* ShiBeiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,6 +265,10 @@
 					};
 					E4D48B39284B5FF6000ABF8A = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					E4D48BDE284C8BCB000ABF8A = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = E4D48B33284B5FF6000ABF8A;
 					};
 				};
 			};
@@ -226,6 +288,7 @@
 			targets = (
 				E4D48B33284B5FF6000ABF8A /* ShiBei (iOS) */,
 				E4D48B39284B5FF6000ABF8A /* ShiBei (macOS) */,
+				E4D48BDE284C8BCB000ABF8A /* ShiBeiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +309,13 @@
 			files = (
 				E4D48B46284B5FF6000ABF8A /* Assets.xcassets in Resources */,
 				E4D48B5C284B636B000ABF8A /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4D48BDD284C8BCB000ABF8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +356,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4D48BDB284C8BCB000ABF8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4D48BE4284C8BCB000ABF8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4D48B33284B5FF6000ABF8A /* ShiBei (iOS) */;
+			targetProxy = E4D48BE3284C8BCB000ABF8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E4D48B5E284B636B000ABF8A /* Localizable.strings */ = {
@@ -531,6 +617,47 @@
 			};
 			name = Release;
 		};
+		E4D48BE6284C8BCB000ABF8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.ShiBeiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShiBei.app/ShiBei";
+			};
+			name = Debug;
+		};
+		E4D48BE7284C8BCB000ABF8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PSXQUH2HR6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.sketch.ShiBeiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShiBei.app/ShiBei";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -557,6 +684,15 @@
 			buildConfigurations = (
 				E4D48B4D284B5FF6000ABF8A /* Debug */,
 				E4D48B4E284B5FF6000ABF8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4D48BE5284C8BCB000ABF8A /* Build configuration list for PBXNativeTarget "ShiBeiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4D48BE6284C8BCB000ABF8A /* Debug */,
+				E4D48BE7284C8BCB000ABF8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -29,11 +29,11 @@ struct ContentView: View {
             case .Automatic:
                 let aRecommendation = recommend(date: a.date!)
                 let bRecommendation = recommend(date: b.date!)
-                if aRecommendation == 0 && bRecommendation == 0 {
-                    return a.date! > b.date!
+                if aRecommendation == bRecommendation {
+                    return a.date! < b.date!
                 }
                 
-                return aRecommendation < bRecommendation
+                return aRecommendation > bRecommendation
             case .Title:
                 return a.title! < b.title!
             case .OldestToNewest:
@@ -135,16 +135,16 @@ struct ContentView: View {
         let now = Date.now
         let yearDelta = now.get(.year) - date.get(.year)
         if date.isAnniversary {
-            return (yearDelta + 1) * anniversaryWeight
+            return yearDelta * anniversaryWeight
         }
         
         let dayToNow = date.dayToNow + 1
         if dayToNow % 100 == 0 {
-            return (dayToNow / 100 + 1) * hundredsWeight
+            return dayToNow / 100 * hundredsWeight
         }
         
         if date.isMonthiversary {
-            return (yearDelta * 12 + now.get(.month) - date.get(.month) + 1) * monthiversaryWeight
+            return (yearDelta * 12 + now.get(.month) - date.get(.month)) * monthiversaryWeight
         }
         
         return 0
