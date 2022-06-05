@@ -67,7 +67,10 @@ struct ContentView: View {
             .sheet(isPresented: $isAdding) {
                 AddView(isPresented: $isAdding, id: $id, title: $title, date: $date) {
                     if id == emptyId {
-                        addItem(title: title, date: date)
+                        addItem(id: UUID(), title: title, date: date)
+                    } else {
+                        deleteItem(id: id)
+                        addItem(id: id, title: title, date: date)
                     }
                     self.isAdding = false
                 } delete: {
@@ -147,10 +150,10 @@ struct ContentView: View {
         return 0
     }
     
-    private func addItem(title: String, date: Date) {
+    private func addItem(id: UUID, title: String, date: Date) {
         withAnimation {
             let newRecord = Record(context: viewContext)
-            newRecord.id = UUID()
+            newRecord.id = id
             newRecord.title = title
             newRecord.date = date
 
