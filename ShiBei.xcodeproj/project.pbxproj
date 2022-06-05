@@ -33,6 +33,12 @@
 		E4D48BBF284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
 		E4D48BC0284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
 		E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */; };
+		E4D48BF3284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
+		E4D48BF4284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
+		E4D48BF5284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
+		E4D48BF7284CBC47000ABF8A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF6284CBC47000ABF8A /* UUID.swift */; };
+		E4D48BF8284CBC47000ABF8A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF6284CBC47000ABF8A /* UUID.swift */; };
+		E4D48BF9284CBC47000ABF8A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF6284CBC47000ABF8A /* UUID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,8 @@
 		E4D48BD4284C8BA8000ABF8A /* ShiBeiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiTests.swift; sourceTree = "<group>"; };
 		E4D48BDF284C8BCB000ABF8A /* ShiBeiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShiBeiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiTests.swift; sourceTree = "<group>"; };
+		E4D48BF2284CB87B000ABF8A /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		E4D48BF6284CBC47000ABF8A /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 		E4D48B29284B5FF4000ABF8A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E4D48BE9284CB777000ABF8A /* Models */,
 				E4D48B63284B64ED000ABF8A /* Utils */,
 				E4D48B2E284B5FF4000ABF8A /* Persistence.swift */,
 				E4D48B2F284B5FF6000ABF8A /* Assets.xcassets */,
@@ -158,6 +167,7 @@
 			children = (
 				E4D48B64284B64F8000ABF8A /* Date.swift */,
 				E4D48B67284B650C000ABF8A /* String.swift */,
+				E4D48BF6284CBC47000ABF8A /* UUID.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -193,6 +203,14 @@
 				E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */,
 			);
 			path = ShiBeiTests;
+			sourceTree = "<group>";
+		};
+		E4D48BE9284CB777000ABF8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4D48BF2284CB87B000ABF8A /* Record.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,12 +344,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D48BF7284CBC47000ABF8A /* UUID.swift in Sources */,
 				E4D48BB8284B9CE9000ABF8A /* Constants.swift in Sources */,
 				E4D48BBC284BBF92000ABF8A /* ViewModel.swift in Sources */,
 				E4D48BBF284BCEDA000ABF8A /* AddView.swift in Sources */,
 				E4D48B3D284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */,
 				E4D48B43284B5FF6000ABF8A /* Persistence.swift in Sources */,
 				E4D48B68284B650C000ABF8A /* String.swift in Sources */,
+				E4D48BF3284CB87B000ABF8A /* Record.swift in Sources */,
 				E4D48B65284B64F8000ABF8A /* Date.swift in Sources */,
 				E4D48B61284B64E4000ABF8A /* RecordView.swift in Sources */,
 				E4D48B3F284B5FF6000ABF8A /* ShiBeiApp.swift in Sources */,
@@ -343,12 +363,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D48BF8284CBC47000ABF8A /* UUID.swift in Sources */,
 				E4D48BB9284B9CE9000ABF8A /* Constants.swift in Sources */,
 				E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */,
 				E4D48BC0284BCEDA000ABF8A /* AddView.swift in Sources */,
 				E4D48B3E284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */,
 				E4D48B44284B5FF6000ABF8A /* Persistence.swift in Sources */,
 				E4D48B69284B650C000ABF8A /* String.swift in Sources */,
+				E4D48BF4284CB87B000ABF8A /* Record.swift in Sources */,
 				E4D48B66284B64F8000ABF8A /* Date.swift in Sources */,
 				E4D48B62284B64E4000ABF8A /* RecordView.swift in Sources */,
 				E4D48B40284B5FF6000ABF8A /* ShiBeiApp.swift in Sources */,
@@ -360,6 +382,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D48BF9284CBC47000ABF8A /* UUID.swift in Sources */,
+				E4D48BF5284CB87B000ABF8A /* Record.swift in Sources */,
 				E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

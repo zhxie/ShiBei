@@ -12,15 +12,17 @@ struct AddView: View {
     @Binding var id: UUID
     @Binding var title: String
     @Binding var date: Date
+    @Binding var pin: Bool
     var done: () -> Void
     var delete: () -> Void
 
-    init(isPresented: Binding<Bool>, id: Binding<UUID>, title: Binding<String>, date: Binding<Date>, done: @escaping () -> Void, delete: @escaping () -> Void) {
+    init(isPresented: Binding<Bool>, id: Binding<UUID>, title: Binding<String>, date: Binding<Date>, pin: Binding<Bool>, done: @escaping () -> Void, delete: @escaping () -> Void) {
         UITableView.appearance().sectionFooterHeight = 0
         self._isPresented = isPresented
         self._id = id
         self._title = title
         self._date = date
+        self._pin = pin
         self.done = done
         self.delete = delete
     }
@@ -35,7 +37,10 @@ struct AddView: View {
                     DatePicker("date", selection: $date, displayedComponents: .date)
                         .datePickerStyle(.graphical)
                 }
-                if id != emptyId {
+                Section {
+                    Toggle("pin", isOn: $pin)
+                }
+                if id != UUID.empty {
                     Section {
                         Button("delete", role: .destructive) {
                             delete()
@@ -63,6 +68,6 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView(isPresented: .constant(true), id: .constant(emptyId), title: .constant(""), date: .constant(Date.now), done: {}, delete: {})
+        AddView(isPresented: .constant(true), id: .constant(UUID.empty), title: .constant(""), date: .constant(Date.now), pin: .constant(false), done: {}, delete: {})
     }
 }

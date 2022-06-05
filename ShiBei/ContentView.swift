@@ -14,9 +14,10 @@ struct ContentView: View {
     @State var isAdding = false
     @State var sortBy = SortBy.Automatic
     
-    @State var id = emptyId
+    @State var id = UUID.empty
     @State var title = ""
     @State var date = Date.now
+    @State var pin = false
 
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\.id)],
@@ -25,21 +26,25 @@ struct ContentView: View {
     
     var sortedRecords: [Record] {
         records.sorted { a, b in
+            if a.pin != b.pin {
+                return a.pin
+            }
+            
             switch sortBy {
             case .Automatic:
-                let aRecommendation = recommend(date: a.date!)
-                let bRecommendation = recommend(date: b.date!)
+                let aRecommendation = recommend(date: a.wrappedDate)
+                let bRecommendation = recommend(date: b.wrappedDate)
                 if aRecommendation == bRecommendation {
-                    return a.date! < b.date!
+                    return a.wrappedDate < b.wrappedDate
                 }
                 
                 return aRecommendation > bRecommendation
             case .Title:
-                return a.title! < b.title!
+                return a.wrappedTitle < b.wrappedTitle
             case .OldestToNewest:
-                return a.date! > b.date!
+                return a.wrappedDate > b.wrappedDate
             case .NewestToOldest:
-                return a.date! < b.date!
+                return a.wrappedDate < b.wrappedDate
             }
         }
     }
@@ -52,11 +57,12 @@ struct ContentView: View {
                 
                 ScrollView {
                     ForEach(sortedRecords) {record in
-                        RecordView(title: record.title!, date: record.date!)
+                        RecordView(title: record.wrappedTitle, date: record.wrappedDate, pin: record.pin, recommended: recommend(date: record.wrappedDate) > 0)
                             .onTapGesture {
-                                self.id = record.id!
-                                self.title = record.title!
-                                self.date = record.date!
+                                self.id = record.wrappedId
+                                self.title = record.wrappedTitle
+                                self.date = record.wrappedDate
+                                self.pin = record.pin
                                 self.isAdding = true
                             }
                     }
@@ -65,12 +71,12 @@ struct ContentView: View {
             }
             .navigationTitle("records")
             .sheet(isPresented: $isAdding) {
-                AddView(isPresented: $isAdding, id: $id, title: $title, date: $date) {
-                    if id == emptyId {
-                        addItem(id: UUID(), title: title, date: date)
+                AddView(isPresented: $isAdding, id: $id, title: $title, date: $date, pin: $pin) {
+                    if id == UUID.empty {
+                        addItem(id: UUID(), title: title, date: date, pin: pin)
                     } else {
                         deleteItem(id: id)
-                        addItem(id: id, title: title, date: date)
+                        addItem(id: id, title: title, date: date, pin: pin)
                     }
                     self.isAdding = false
                 } delete: {
@@ -115,9 +121,10 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        self.id = emptyId
+                        self.id = UUID.empty
                         self.title = ""
                         self.date = Date.now
+                        self.pin = false
                         self.isAdding = true
                     } label: {
                         Label("add", systemImage: "plus.circle")
@@ -150,12 +157,13 @@ struct ContentView: View {
         return 0
     }
     
-    private func addItem(id: UUID, title: String, date: Date) {
+    private func addItem(id: UUID, title: String, date: Date, pin: Bool) {
         withAnimation {
             let newRecord = Record(context: viewContext)
             newRecord.id = id
             newRecord.title = title
             newRecord.date = date
+            newRecord.pin = pin
 
             do {
                 try viewContext.save()
