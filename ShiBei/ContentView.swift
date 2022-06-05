@@ -62,14 +62,15 @@ struct ContentView: View {
                 } else {
                     ScrollView {
                         ForEach(sortedRecords) {record in
-                            RecordView(title: record.wrappedTitle, date: record.wrappedDate, pin: record.pin, recommended: recommend(date: record.wrappedDate) > 0)
-                                .onTapGesture {
-                                    self.id = record.wrappedId
-                                    self.title = record.wrappedTitle
-                                    self.date = record.wrappedDate
-                                    self.pin = record.pin
-                                    self.isAdding = true
-                                }
+                            RecordView(title: record.wrappedTitle, date: record.wrappedDate, pin: record.pin, recommended: recommend(date: record.wrappedDate) > 0) {
+                                self.id = record.wrappedId
+                                self.title = record.wrappedTitle
+                                self.date = record.wrappedDate
+                                self.pin = record.pin
+                                self.isAdding = true
+                            }
+                            .padding(.bottom, 4)
+                            .shadow(color: .black.opacity(0.1), radius: 5)
                         }
                         .padding(.horizontal)
                     }

@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct RecordView: View {
+    @State var scaled = false
+    
     let title: String
     let date: Date
     let pin: Bool
     let recommended: Bool
+    let callback: () -> Void
     
     var body: some View {
         ZStack {
@@ -20,8 +23,8 @@ struct RecordView: View {
             
             HStack {
                 VStack (alignment: .leading, spacing: 4) {
-                    Text(title)
-                        .font(.title)
+                    Text(title + " ")
+                        .font(.title2)
                         .fontWeight(.bold)
                         .lineLimit(1)
                     
@@ -36,8 +39,8 @@ struct RecordView: View {
                         }
                         
                         Text(since)
-                            .font(.headline)
-                            .fontWeight(.bold)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
                             .lineLimit(1)
                     }
                 }
@@ -45,11 +48,20 @@ struct RecordView: View {
                 Spacer()
                 
                 Text(String(count))
-                    .font(.system(size: 60))
+                    .font(.system(size: 48))
                     .layoutPriority(1)
                     .lineLimit(1)
             }
             .padding()
+        }
+        .scaleEffect(scaled ? 0.95 : 1)
+        .onTouchDownUpGesture { tapped in
+            withAnimation {
+                self.scaled = tapped
+            }
+            if !tapped {
+                callback()
+            }
         }
     }
     
@@ -69,6 +81,6 @@ struct RecordView: View {
 
 struct RecordView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordView(title: "Today", date: Date.now, pin: true, recommended: true)
+        RecordView(title: "Today", date: Date.now, pin: true, recommended: true) {}
     }
 }

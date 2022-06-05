@@ -13,8 +13,8 @@ struct AddView: View {
     @Binding var title: String
     @Binding var date: Date
     @Binding var pin: Bool
-    var done: () -> Void
-    var delete: () -> Void
+    let done: () -> Void
+    let delete: () -> Void
 
     init(isPresented: Binding<Bool>, id: Binding<UUID>, title: Binding<String>, date: Binding<Date>, pin: Binding<Bool>, done: @escaping () -> Void, delete: @escaping () -> Void) {
         UITableView.appearance().sectionFooterHeight = 0

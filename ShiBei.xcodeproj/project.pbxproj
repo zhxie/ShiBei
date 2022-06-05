@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E49B0B60284CED190003C57F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B0B5F284CED190003C57F /* View.swift */; };
+		E49B0B61284CED190003C57F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B0B5F284CED190003C57F /* View.swift */; };
 		E4D48B3D284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B2A284B5FF4000ABF8A /* ShiBei.xcdatamodeld */; };
 		E4D48B3E284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B2A284B5FF4000ABF8A /* ShiBei.xcdatamodeld */; };
 		E4D48B3F284B5FF6000ABF8A /* ShiBeiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48B2C284B5FF4000ABF8A /* ShiBeiApp.swift */; };
@@ -35,10 +37,8 @@
 		E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BE1284C8BCB000ABF8A /* ShiBeiTests.swift */; };
 		E4D48BF3284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
 		E4D48BF4284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
-		E4D48BF5284CB87B000ABF8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF2284CB87B000ABF8A /* Record.swift */; };
 		E4D48BF7284CBC47000ABF8A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF6284CBC47000ABF8A /* UUID.swift */; };
 		E4D48BF8284CBC47000ABF8A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF6284CBC47000ABF8A /* UUID.swift */; };
-		E4D48BF9284CBC47000ABF8A /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BF6284CBC47000ABF8A /* UUID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E49B0B5F284CED190003C57F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E4D48B2B284B5FF4000ABF8A /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E4D48B2C284B5FF4000ABF8A /* ShiBeiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiBeiApp.swift; sourceTree = "<group>"; };
 		E4D48B2D284B5FF4000ABF8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E49B0B5E284CED030003C57F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E49B0B5F284CED190003C57F /* View.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E4D48B24284B5FF3000ABF8A = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D48BBA284BA38B000ABF8A /* Models */,
+				E49B0B5E284CED030003C57F /* Utils */,
 				E4D48B2C284B5FF4000ABF8A /* ShiBeiApp.swift */,
 				E4D48B2D284B5FF4000ABF8A /* ContentView.swift */,
 				E4D48B60284B64E4000ABF8A /* RecordView.swift */,
@@ -344,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49B0B60284CED190003C57F /* View.swift in Sources */,
 				E4D48BF7284CBC47000ABF8A /* UUID.swift in Sources */,
 				E4D48BB8284B9CE9000ABF8A /* Constants.swift in Sources */,
 				E4D48BBC284BBF92000ABF8A /* ViewModel.swift in Sources */,
@@ -363,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49B0B61284CED190003C57F /* View.swift in Sources */,
 				E4D48BF8284CBC47000ABF8A /* UUID.swift in Sources */,
 				E4D48BB9284B9CE9000ABF8A /* Constants.swift in Sources */,
 				E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */,
@@ -382,8 +394,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4D48BF9284CBC47000ABF8A /* UUID.swift in Sources */,
-				E4D48BF5284CB87B000ABF8A /* Record.swift in Sources */,
 				E4D48BE2284C8BCB000ABF8A /* ShiBeiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
