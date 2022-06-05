@@ -19,3 +19,9 @@
 
 "from_%@" = "From %@";
 "n/a" = "N/A";
+
+"cancel" = "Cancel";
+"done" = "Done";
+"date" = "Date";
+"pin" = "Pin";
+"delete" = "Delete";

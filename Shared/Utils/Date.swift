@@ -18,7 +18,7 @@ extension Date {
         self.init(timeIntervalSinceReferenceDate: calendar.date(from: components)!.timeIntervalSinceReferenceDate)
     }
     
-    var year : Int {
+    var year: Int {
         return Int(self.formatted(.dateTime.year()))!
     }
     
@@ -30,22 +30,22 @@ extension Date {
         return Int(self.formatted(.dateTime.day()))!
     }
     
-    var anniversary: Bool {
+    var isAnniversary: Bool {
         let now = Date.now
         return now.month == self.month && now.day == self.day
     }
     
-    var monthiversary: Bool {
+    var isMonthiversary: Bool {
         return Date.now.month == self.month
     }
     
-    var daySinceNow : Int {
+    var daySinceNow: Int {
         let interval = self.timeIntervalSinceNow
         
         return Int(floor(interval / 86400))
     }
     
-    var dayToNow : Int {
+    var dayToNow: Int {
         return -daySinceNow
     }
 }

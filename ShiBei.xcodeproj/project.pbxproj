@@ -30,6 +30,8 @@
 		E4D48BB9284B9CE9000ABF8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BB7284B9CE9000ABF8A /* Constants.swift */; };
 		E4D48BBC284BBF92000ABF8A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBB284BBF92000ABF8A /* ViewModel.swift */; };
 		E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBB284BBF92000ABF8A /* ViewModel.swift */; };
+		E4D48BBF284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
+		E4D48BC0284BCEDA000ABF8A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D48BBE284BCED9000ABF8A /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,7 @@
 		E4D48B6E284B6624000ABF8A /* ShiBei--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ShiBei--iOS--Info.plist"; sourceTree = "<group>"; };
 		E4D48BB7284B9CE9000ABF8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E4D48BBB284BBF92000ABF8A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E4D48BBE284BCED9000ABF8A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 				E4D48B2C284B5FF4000ABF8A /* ShiBeiApp.swift */,
 				E4D48B2D284B5FF4000ABF8A /* ContentView.swift */,
 				E4D48B60284B64E4000ABF8A /* RecordView.swift */,
+				E4D48BBE284BCED9000ABF8A /* AddView.swift */,
 			);
 			path = ShiBei;
 			sourceTree = "<group>";
@@ -254,6 +258,7 @@
 			files = (
 				E4D48BB8284B9CE9000ABF8A /* Constants.swift in Sources */,
 				E4D48BBC284BBF92000ABF8A /* ViewModel.swift in Sources */,
+				E4D48BBF284BCEDA000ABF8A /* AddView.swift in Sources */,
 				E4D48B3D284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */,
 				E4D48B43284B5FF6000ABF8A /* Persistence.swift in Sources */,
 				E4D48B68284B650C000ABF8A /* String.swift in Sources */,
@@ -270,6 +275,7 @@
 			files = (
 				E4D48BB9284B9CE9000ABF8A /* Constants.swift in Sources */,
 				E4D48BBD284BBF92000ABF8A /* ViewModel.swift in Sources */,
+				E4D48BC0284BCEDA000ABF8A /* AddView.swift in Sources */,
 				E4D48B3E284B5FF6000ABF8A /* ShiBei.xcdatamodeld in Sources */,
 				E4D48B44284B5FF6000ABF8A /* Persistence.swift in Sources */,
 				E4D48B69284B650C000ABF8A /* String.swift in Sources */,

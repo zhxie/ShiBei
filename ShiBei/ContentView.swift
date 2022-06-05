@@ -11,14 +11,19 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) var viewContext
     
-    @State var sortBy : SortBy = .Automatic
+    @State var isAdding = false
+    @State var sortBy = SortBy.Automatic
+    
+    @State var id = emptyId
+    @State var title = ""
+    @State var date = Date.now
 
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\.id)],
         animation: .default)
     var records: FetchedResults<Record>
     
-    var sortedRecords : [Record] {
+    var sortedRecords: [Record] {
         records.sorted { a, b in
             switch sortBy {
             case .Automatic:
@@ -48,11 +53,28 @@ struct ContentView: View {
                 ScrollView {
                     ForEach(sortedRecords) {record in
                         RecordView(title: record.title!, date: record.date!)
+                            .onTapGesture {
+                                self.id = record.id!
+                                self.title = record.title!
+                                self.date = record.date!
+                                self.isAdding = true
+                            }
                     }
                     .padding(.horizontal)
                 }
             }
             .navigationTitle("records")
+            .sheet(isPresented: $isAdding) {
+                AddView(isPresented: $isAdding, id: $id, title: $title, date: $date) {
+                    if id == emptyId {
+                        addItem(title: title, date: date)
+                    }
+                    self.isAdding = false
+                } delete: {
+                    deleteItem(id: id)
+                    self.isAdding = false
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
@@ -89,7 +111,12 @@ struct ContentView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {}) {
+                    Button {
+                        self.id = emptyId
+                        self.title = ""
+                        self.date = Date.now
+                        self.isAdding = true
+                    } label: {
                         Label("add", systemImage: "plus.circle")
                     }
                 }
@@ -109,11 +136,11 @@ struct ContentView: View {
         
         let now = Date.now
         let yearDelta = now.year - date.year
-        if date.anniversary {
+        if date.isAnniversary {
             return (yearDelta + 1) * anniversaryWeight
         }
         
-        if date.monthiversary {
+        if date.isMonthiversary {
             return (yearDelta * 12 + now.month - date.month + 1) * monthiversaryWeight
         }
         
@@ -138,9 +165,15 @@ struct ContentView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteItem(id: UUID) {
         withAnimation {
-            offsets.map { records[$0] }.forEach(viewContext.delete)
+            let record = records.first { record in
+                record.id == id
+            }
+            guard let record = record else {
+                return
+            }
+            viewContext.delete(record)
 
             do {
                 try viewContext.save()
