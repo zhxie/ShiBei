@@ -61,7 +61,7 @@ struct RecordView: View {
     }
     
     var since: String {
-        return String(format: "from_%@".localizedString, date.formatted(.dateTime.year().month().day()))
+        String(format: "from_%@".localizedString, date.formatted(.dateTime.year().month().day()))
     }
     
     var count: Int {

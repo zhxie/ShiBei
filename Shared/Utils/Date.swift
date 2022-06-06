@@ -9,7 +9,7 @@ import Foundation
 
 extension Date {
     init(year: Int, month: Int, day: Int) {
-        let calendar = Calendar(identifier: .gregorian)
+        let calendar = Calendar.current
         var components = DateComponents()
         components.year = year
         components.month = month
@@ -18,12 +18,23 @@ extension Date {
         self.init(timeIntervalSinceReferenceDate: calendar.date(from: components)!.timeIntervalSinceReferenceDate)
     }
     
+    init(year: Int, month: Int, day: Int, timeZone: TimeZone) {
+        let calendar = Calendar.current
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        components.timeZone = timeZone
+        
+        self.init(timeIntervalSinceReferenceDate: calendar.date(from: components)!.timeIntervalSinceReferenceDate)
+    }
+    
     func get(_ components: Calendar.Component..., calendar: Calendar = Calendar.current) -> DateComponents {
-        return calendar.dateComponents(Set(components), from: self)
+        calendar.dateComponents(Set(components), from: self)
     }
 
     func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
-        return calendar.component(component, from: self)
+        calendar.component(component, from: self)
     }
     
     var isAnniversary: Bool {
@@ -33,7 +44,7 @@ extension Date {
     }
     
     var isMonthiversary: Bool {
-        return Date.now.get(.day) == get(.day)
+        Date.now.get(.day) == get(.day)
     }
     
     var dayToNow: Int {

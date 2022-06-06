@@ -15,6 +15,10 @@ extension Record {
         title ?? ""
     }
     var wrappedDate : Date {
-        date ?? Date.now
+        guard let date = date else {
+            return Date.now
+        }
+        
+        return Date(year: date.get(.year), month: date.get(.month), day: date.get(.day))
     }
 }

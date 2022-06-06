@@ -169,7 +169,7 @@ struct ContentView: View {
             let newRecord = Record(context: viewContext)
             newRecord.id = id
             newRecord.title = title
-            newRecord.date = date
+            newRecord.date = Date(year: date.get(.year), month: date.get(.month), day: date.get(.day), timeZone: TimeZone(secondsFromGMT: 0)!)
             newRecord.pin = pin
 
             do {
