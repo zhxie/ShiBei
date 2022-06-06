@@ -38,7 +38,22 @@ struct AddView: View {
                         .datePickerStyle(.graphical)
                 }
                 Section {
-                    Toggle("pin", isOn: $pin)
+                    Toggle(isOn: $pin) {
+                        Label {
+                            Text("pin")
+                        } icon: {
+                            ZStack {
+                                Image(systemName: "pin.fill")
+                                    .background(RoundedRectangle(cornerRadius: 7)
+                                        .frame(width: 28, height: 28)
+                                        .foregroundColor(.red)
+                                    )
+                                    .foregroundStyle(.white)
+                                    .imageScale(.small)
+                            }
+                        }
+
+                    }
                 }
                 if id != UUID.empty {
                     Section {
