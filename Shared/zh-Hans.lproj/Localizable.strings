@@ -25,4 +25,8 @@
 "done" = "完成";
 "date" = "日期";
 "pin" = "置顶";
+"notification" = "通知";
+"each_hundredth_day" = "每100日";
+"anniversary" = "年度纪念日";
+"monthiversary" = "月度纪念日";
 "delete" = "删除";

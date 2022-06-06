@@ -49,12 +49,32 @@ struct AddView: View {
                                         .foregroundColor(.red)
                                     )
                                     .foregroundStyle(.white)
-                                    .imageScale(.small)
                             }
                         }
 
                     }
                 }
+#if false
+                Section {
+                    Toggle(isOn: $pin) {
+                        Label {
+                            Text("notification")
+                        } icon: {
+                            ZStack {
+                                Image(systemName: "bell.badge.fill")
+                                    .background(RoundedRectangle(cornerRadius: 7)
+                                        .frame(width: 28, height: 28)
+                                        .foregroundColor(.yellow)
+                                    )
+                                    .foregroundStyle(.white)
+                            }
+                        }
+                    }
+                    Toggle("each_hundredth_day", isOn: .constant(false))
+                    Toggle("anniversary", isOn: .constant(false))
+                    Toggle("monthiversary", isOn: .constant(false))
+                }
+#endif
                 if id != UUID.empty {
                     Section {
                         Button("delete", role: .destructive) {

@@ -25,4 +25,8 @@
 "done" = "Done";
 "date" = "Date";
 "pin" = "Pin";
+"notification" = "Notification";
+"each_hundredth_day" = "Each Hundredth Day";
+"anniversary" = "Anniversary";
+"monthiversary" = "Monthiversary";
 "delete" = "Delete";
